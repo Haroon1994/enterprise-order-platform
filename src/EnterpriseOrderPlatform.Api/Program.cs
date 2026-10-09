@@ -1,8 +1,11 @@
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddHealthChecks();
+
 var app = builder.Build();
 
 app.MapGet("/ping", () => TypedResults.Ok(new PingResponse("enterprise-order-platform", "ok")));
+app.MapHealthChecks("/health");
 
 app.Run();
 
