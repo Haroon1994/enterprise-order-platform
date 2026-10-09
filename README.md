@@ -15,7 +15,7 @@ Run `dotnet build` and then `dotnet test` from the repository root.
 
 ## Run
 
-Run `dotnet run --project src/EnterpriseOrderPlatform.Api --urls http://localhost:5080`, then open http://localhost:5080/ping.
+Run `dotnet run --project src/EnterpriseOrderPlatform.Host --urls http://localhost:5080`, then open http://localhost:5080/ping.
 
 ## Structure
 
