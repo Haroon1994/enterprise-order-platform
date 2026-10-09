@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\EnterpriseOrderPlatform.Application\EnterpriseOrderPlatform.Application.csproj" />
     <ProjectReference Include="..\EnterpriseOrderPlatform.Infrastructure\EnterpriseOrderPlatform.Infrastructure.csproj" />
+    <ProjectReference Include="..\EnterpriseOrderPlatform.BuildingBlocks\EnterpriseOrderPlatform.BuildingBlocks.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
