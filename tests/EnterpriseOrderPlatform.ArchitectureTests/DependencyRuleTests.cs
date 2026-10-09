@@ -8,7 +8,7 @@ public class DependencyRuleTests
 {
     private const string ApplicationNs = "EnterpriseOrderPlatform.Application";
     private const string InfrastructureNs = "EnterpriseOrderPlatform.Infrastructure";
-    private const string ApiNs = "EnterpriseOrderPlatform.Api";
+    private const string HostNs = "EnterpriseOrderPlatform.Host";
 
     private static readonly Assembly Domain = typeof(EnterpriseOrderPlatform.Domain.AssemblyMarker).Assembly;
     private static readonly Assembly Application = typeof(EnterpriseOrderPlatform.Application.AssemblyMarker).Assembly;
@@ -19,7 +19,7 @@ public class DependencyRuleTests
     {
         var result = Types.InAssembly(Domain)
             .ShouldNot()
-            .HaveDependencyOnAny(ApplicationNs, InfrastructureNs, ApiNs)
+            .HaveDependencyOnAny(ApplicationNs, InfrastructureNs, HostNs)
             .GetResult();
 
         Assert.True(result.IsSuccessful, FailingTypes(result));
@@ -30,7 +30,7 @@ public class DependencyRuleTests
     {
         var result = Types.InAssembly(Application)
             .ShouldNot()
-            .HaveDependencyOnAny(InfrastructureNs, ApiNs)
+            .HaveDependencyOnAny(InfrastructureNs, HostNs)
             .GetResult();
 
         Assert.True(result.IsSuccessful, FailingTypes(result));
@@ -41,7 +41,7 @@ public class DependencyRuleTests
     {
         var result = Types.InAssembly(Infrastructure)
             .ShouldNot()
-            .HaveDependencyOnAny(ApiNs)
+            .HaveDependencyOnAny(HostNs)
             .GetResult();
 
         Assert.True(result.IsSuccessful, FailingTypes(result));

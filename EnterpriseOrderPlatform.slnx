@@ -1,7 +1,8 @@
 <Solution>
   <Folder Name="/src/">
-    <Project Path="src/EnterpriseOrderPlatform.Api/EnterpriseOrderPlatform.Api.csproj" />
+    <Project Path="src/EnterpriseOrderPlatform.Host/EnterpriseOrderPlatform.Host.csproj" />
     <Project Path="src/EnterpriseOrderPlatform.Application/EnterpriseOrderPlatform.Application.csproj" />
+    <Project Path="src/EnterpriseOrderPlatform.BuildingBlocks/EnterpriseOrderPlatform.BuildingBlocks.csproj" />
     <Project Path="src/EnterpriseOrderPlatform.Domain/EnterpriseOrderPlatform.Domain.csproj" />
     <Project Path="src/EnterpriseOrderPlatform.Infrastructure/EnterpriseOrderPlatform.Infrastructure.csproj" />
   </Folder>
