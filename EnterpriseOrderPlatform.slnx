@@ -6,6 +6,9 @@
     <Project Path="src/EnterpriseOrderPlatform.Domain/EnterpriseOrderPlatform.Domain.csproj" />
     <Project Path="src/EnterpriseOrderPlatform.Infrastructure/EnterpriseOrderPlatform.Infrastructure.csproj" />
   </Folder>
+  <Folder Name="/src/Modules/">
+    <Project Path="src/Modules/EnterpriseOrderPlatform.Modules.Identity/EnterpriseOrderPlatform.Modules.Identity.csproj" />
+  </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/EnterpriseOrderPlatform.ArchitectureTests/EnterpriseOrderPlatform.ArchitectureTests.csproj" />
     <Project Path="tests/EnterpriseOrderPlatform.IntegrationTests/EnterpriseOrderPlatform.IntegrationTests.csproj" />
