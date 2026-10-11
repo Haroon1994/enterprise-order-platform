@@ -23,6 +23,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\EnterpriseOrderPlatform.Domain\EnterpriseOrderPlatform.Domain.csproj" />
     <ProjectReference Include="..\..\src\EnterpriseOrderPlatform.Application\EnterpriseOrderPlatform.Application.csproj" />
+    <ProjectReference Include="..\..\src\EnterpriseOrderPlatform.BuildingBlocks\EnterpriseOrderPlatform.BuildingBlocks.csproj" />
+    <ProjectReference Include="..\..\src\Modules\EnterpriseOrderPlatform.Modules.Identity\EnterpriseOrderPlatform.Modules.Identity.csproj" />
   </ItemGroup>
 
 </Project>
