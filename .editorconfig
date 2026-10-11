@@ -396,3 +396,8 @@ dotnet_diagnostic.CA1515.severity = none
 [src/EnterpriseOrderPlatform.Api/Program.cs]
 dotnet_diagnostic.CA1050.severity = none
 dotnet_diagnostic.CA1515.severity = none
+
+# EF Core generated migrations
+[**/Migrations/*.cs]
+generated_code = true
+dotnet_analyzer_diagnostic.severity = none

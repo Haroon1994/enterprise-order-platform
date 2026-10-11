@@ -1,3 +1,5 @@
+using EnterpriseOrderPlatform.Modules.Identity.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 var postgresConnectionString = builder.Configuration.GetConnectionString("Postgres");
@@ -6,6 +8,7 @@ var healthChecks = builder.Services.AddHealthChecks();
 if (!string.IsNullOrWhiteSpace(postgresConnectionString))
 {
     healthChecks.AddNpgSql(postgresConnectionString, name: "postgres", tags: ["ready"]);
+    builder.Services.AddIdentityModule(postgresConnectionString);
 }
 
 var app = builder.Build();
