@@ -6,6 +6,7 @@
     <ProjectReference Include="..\EnterpriseOrderPlatform.BuildingBlocks\EnterpriseOrderPlatform.BuildingBlocks.csproj" />
     <ProjectReference Include="..\Modules\EnterpriseOrderPlatform.Modules.Identity\EnterpriseOrderPlatform.Modules.Identity.csproj" />
     <ProjectReference Include="..\Modules\EnterpriseOrderPlatform.Modules.Catalog\EnterpriseOrderPlatform.Modules.Catalog.csproj" />
+    <ProjectReference Include="..\Modules\EnterpriseOrderPlatform.Modules.Inventory\EnterpriseOrderPlatform.Modules.Inventory.csproj" />
   </ItemGroup>
 
   <ItemGroup>

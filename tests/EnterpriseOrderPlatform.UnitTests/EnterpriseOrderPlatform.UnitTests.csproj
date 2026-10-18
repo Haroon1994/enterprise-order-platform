@@ -26,6 +26,7 @@
     <ProjectReference Include="..\..\src\EnterpriseOrderPlatform.BuildingBlocks\EnterpriseOrderPlatform.BuildingBlocks.csproj" />
     <ProjectReference Include="..\..\src\Modules\EnterpriseOrderPlatform.Modules.Identity\EnterpriseOrderPlatform.Modules.Identity.csproj" />
     <ProjectReference Include="..\..\src\Modules\EnterpriseOrderPlatform.Modules.Catalog\EnterpriseOrderPlatform.Modules.Catalog.csproj" />
+    <ProjectReference Include="..\..\src\Modules\EnterpriseOrderPlatform.Modules.Inventory\EnterpriseOrderPlatform.Modules.Inventory.csproj" />
   </ItemGroup>
 
 </Project>
