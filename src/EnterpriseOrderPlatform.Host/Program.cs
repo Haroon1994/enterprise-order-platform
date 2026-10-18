@@ -20,6 +20,7 @@ if (hasDatabase)
     builder.Services.AddCatalogModule(postgresConnectionString!);
     builder.Services.AddInventoryModule(postgresConnectionString!);
     builder.Services.AddOrderingModule(postgresConnectionString!);
+    builder.Services.AddCheckoutAdapters();
 
     var jwt = builder.Configuration.GetSection(JwtOptions.SectionName).Get<JwtOptions>() ?? new JwtOptions();
     if (jwt.Key.Length < 32)
@@ -72,6 +73,7 @@ if (hasDatabase)
     app.MapCatalogEndpoints();
     app.MapInventoryEndpoints();
     app.MapOrderingEndpoints();
+    app.MapOrderEndpoints();
 }
 
 app.Run();

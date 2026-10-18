@@ -15,6 +15,8 @@ public static class OrderingModuleExtensions
     {
         services.AddDbContext<OrderingDbContext>(o =>
             o.UseNpgsql(connectionString, n => n.MigrationsHistoryTable("__EFMigrationsHistory", OrderingDbContext.Schema)));
+        services.AddScoped<CheckoutService>();
+        services.AddSingleton<Application.IPaymentProvider, FakePaymentProvider>();
         return services;
     }
 
