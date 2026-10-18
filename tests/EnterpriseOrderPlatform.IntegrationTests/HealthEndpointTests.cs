@@ -4,11 +4,11 @@ using Xunit;
 
 namespace EnterpriseOrderPlatform.IntegrationTests;
 
-public sealed class HealthEndpointTests : IClassFixture<WebApplicationFactory<Program>>
+public sealed class HealthEndpointTests : IClassFixture<ApiFactory>
 {
-    private readonly WebApplicationFactory<Program> _factory;
+    private readonly ApiFactory _factory;
 
-    public HealthEndpointTests(WebApplicationFactory<Program> factory)
+    public HealthEndpointTests(ApiFactory factory)
     {
         _factory = factory;
     }

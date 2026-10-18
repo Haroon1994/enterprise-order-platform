@@ -5,11 +5,11 @@ using Xunit;
 
 namespace EnterpriseOrderPlatform.IntegrationTests;
 
-public sealed class PingEndpointTests : IClassFixture<WebApplicationFactory<Program>>
+public sealed class PingEndpointTests : IClassFixture<ApiFactory>
 {
-    private readonly WebApplicationFactory<Program> _factory;
+    private readonly ApiFactory _factory;
 
-    public PingEndpointTests(WebApplicationFactory<Program> factory)
+    public PingEndpointTests(ApiFactory factory)
     {
         _factory = factory;
     }
