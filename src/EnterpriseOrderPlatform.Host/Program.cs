@@ -1,5 +1,6 @@
 using System.Text;
 using EnterpriseOrderPlatform.Host;
+using EnterpriseOrderPlatform.Modules.Catalog.Infrastructure;
 using EnterpriseOrderPlatform.Modules.Identity.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -14,6 +15,7 @@ if (hasDatabase)
 {
     healthChecks.AddNpgSql(postgresConnectionString!, name: "postgres", tags: ["ready"]);
     builder.Services.AddIdentityModule(postgresConnectionString!, builder.Configuration);
+    builder.Services.AddCatalogModule(postgresConnectionString!);
 
     var jwt = builder.Configuration.GetSection(JwtOptions.SectionName).Get<JwtOptions>() ?? new JwtOptions();
     if (jwt.Key.Length < 32)
@@ -63,6 +65,7 @@ app.MapHealthChecks("/health");
 if (hasDatabase)
 {
     app.MapIdentityEndpoints();
+    app.MapCatalogEndpoints();
 }
 
 app.Run();
