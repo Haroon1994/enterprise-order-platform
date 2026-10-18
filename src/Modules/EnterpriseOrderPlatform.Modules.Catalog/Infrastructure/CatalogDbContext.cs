@@ -9,10 +9,10 @@ public class CatalogDbContext(DbContextOptions<CatalogDbContext> options) : DbCo
 
     public DbSet<Product> Products => Set<Product>();
 
-    protected override void OnModelCreating(ModelBuilder builder)
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        builder.HasDefaultSchema(Schema);
-        builder.Entity<Product>(e =>
+        modelBuilder.HasDefaultSchema(Schema);
+        modelBuilder.Entity<Product>(e =>
         {
             e.HasKey(p => p.Id);
             e.Property(p => p.Sku).HasMaxLength(40).IsRequired();
