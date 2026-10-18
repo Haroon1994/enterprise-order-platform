@@ -10,6 +10,7 @@
     <Project Path="src/Modules/EnterpriseOrderPlatform.Modules.Catalog/EnterpriseOrderPlatform.Modules.Catalog.csproj" />
     <Project Path="src/Modules/EnterpriseOrderPlatform.Modules.Identity/EnterpriseOrderPlatform.Modules.Identity.csproj" />
     <Project Path="src/Modules/EnterpriseOrderPlatform.Modules.Inventory/EnterpriseOrderPlatform.Modules.Inventory.csproj" />
+    <Project Path="src/Modules/EnterpriseOrderPlatform.Modules.Ordering/EnterpriseOrderPlatform.Modules.Ordering.csproj" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/EnterpriseOrderPlatform.ArchitectureTests/EnterpriseOrderPlatform.ArchitectureTests.csproj" />
