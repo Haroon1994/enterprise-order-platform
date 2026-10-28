@@ -8,6 +8,8 @@
     <ProjectReference Include="..\Modules\EnterpriseOrderPlatform.Modules.Catalog\EnterpriseOrderPlatform.Modules.Catalog.csproj" />
     <ProjectReference Include="..\Modules\EnterpriseOrderPlatform.Modules.Inventory\EnterpriseOrderPlatform.Modules.Inventory.csproj" />
     <ProjectReference Include="..\Modules\EnterpriseOrderPlatform.Modules.Ordering\EnterpriseOrderPlatform.Modules.Ordering.csproj" />
+    <ProjectReference Include="..\Modules\EnterpriseOrderPlatform.Modules.Shipping\EnterpriseOrderPlatform.Modules.Shipping.csproj" />
+    <ProjectReference Include="..\Modules\EnterpriseOrderPlatform.Modules.Notifications\EnterpriseOrderPlatform.Modules.Notifications.csproj" />
   </ItemGroup>
 
   <ItemGroup>
