@@ -31,3 +31,6 @@ jobs:
 
       - name: Test
         run: dotnet test --no-build --configuration Release
+
+      - name: Check for vulnerable packages
+        run: dotnet list package --vulnerable --include-transitive

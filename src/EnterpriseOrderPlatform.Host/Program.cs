@@ -8,8 +8,16 @@ using EnterpriseOrderPlatform.Modules.Ordering.Infrastructure;
 using EnterpriseOrderPlatform.Modules.Shipping.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog((context, services, configuration) => configuration
+    .ReadFrom.Configuration(context.Configuration)
+    .Enrich.FromLogContext()
+    .WriteTo.Console(formatProvider: System.Globalization.CultureInfo.InvariantCulture));
+
+builder.Services.AddProblemDetails();
 
 var postgresConnectionString = builder.Configuration.GetConnectionString("Postgres");
 var hasDatabase = !string.IsNullOrWhiteSpace(postgresConnectionString);
@@ -55,6 +63,9 @@ if (hasDatabase)
 }
 
 var app = builder.Build();
+
+app.UseExceptionHandler();
+app.UseSerilogRequestLogging();
 
 if (hasDatabase && app.Environment.IsDevelopment())
 {
