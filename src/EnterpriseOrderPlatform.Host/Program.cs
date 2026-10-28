@@ -3,7 +3,9 @@ using EnterpriseOrderPlatform.Host;
 using EnterpriseOrderPlatform.Modules.Catalog.Infrastructure;
 using EnterpriseOrderPlatform.Modules.Identity.Infrastructure;
 using EnterpriseOrderPlatform.Modules.Inventory.Infrastructure;
+using EnterpriseOrderPlatform.Modules.Notifications.Infrastructure;
 using EnterpriseOrderPlatform.Modules.Ordering.Infrastructure;
+using EnterpriseOrderPlatform.Modules.Shipping.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
@@ -21,6 +23,8 @@ if (hasDatabase)
     builder.Services.AddInventoryModule(postgresConnectionString!);
     builder.Services.AddOrderingModule(postgresConnectionString!);
     builder.Services.AddCheckoutAdapters();
+    builder.Services.AddShippingModule(postgresConnectionString!);
+    builder.Services.AddNotificationsModule(postgresConnectionString!);
 
     var jwt = builder.Configuration.GetSection(JwtOptions.SectionName).Get<JwtOptions>() ?? new JwtOptions();
     if (jwt.Key.Length < 32)
@@ -74,6 +78,7 @@ if (hasDatabase)
     app.MapInventoryEndpoints();
     app.MapOrderingEndpoints();
     app.MapOrderEndpoints();
+    app.MapFulfilmentEndpoints();
 }
 
 app.Run();
