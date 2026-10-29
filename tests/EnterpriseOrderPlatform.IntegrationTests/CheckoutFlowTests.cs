@@ -87,7 +87,7 @@ public sealed class CheckoutFlowTests(ApiFactory factory) : IClassFixture<ApiFac
         return await client.SendAsync(request, ct);
     }
 
-    private async Task SeedProductAsync(HttpClient admin, string sku, decimal price, int stock, CancellationToken ct)
+    private static async Task SeedProductAsync(HttpClient admin, string sku, decimal price, int stock, CancellationToken ct)
     {
         var created = await admin.PostAsJsonAsync("/api/catalog/products", new { sku, name = sku, price }, ct);
         Assert.Equal(HttpStatusCode.Created, created.StatusCode);
