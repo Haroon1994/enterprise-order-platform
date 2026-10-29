@@ -18,7 +18,7 @@ A modular-monolith order and inventory backend built with C# and ASP.NET Core on
 One deployable API (`src/EnterpriseOrderPlatform.Host`) and one project per module under `src/Modules`.
 Each module has its own PostgreSQL schema and DbContext, with layers as folders (Domain, Application, Infrastructure, Contracts).
 Modules do not reference each other. Ordering talks to Catalog and Inventory through small ports implemented as adapters in Host.
-Architecture tests enforce layer rules inside the Identity module.
+Architecture tests enforce layer rules inside the Identity module. Integration tests run the real app against a throwaway PostgreSQL (Testcontainers), covering idempotent checkout, the last-unit race and order ownership.
 
 ## Run locally
 
@@ -39,7 +39,5 @@ Architecture tests enforce layer rules inside the Identity module.
 
 - Checkout is not one transaction across modules. A crash between reserving stock and saving could leave stock reserved. Reservation expiry and a transactional outbox would fix this.
 - Notifications are written directly, not event-driven.
-- The concurrency guard on stock is configured but not covered by a concurrent integration test.
-- CI does not yet run tests against a real PostgreSQL (Testcontainers is planned).
 - Refresh tokens, email confirmation and an admin user-management flow are not implemented.
 - Planned: Redis catalog cache, RabbitMQ transport, OpenTelemetry traces, a real payment provider.
